@@ -1,0 +1,47 @@
+.button {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  padding: 1.5rem 3rem;
+  border: 2px solid var(--color-gold);
+  border-radius: 10rem;
+  line-height: 1;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.8rem;
+  letter-spacing: 0.03rem;
+  display: flex;
+  align-items: center;
+
+  & svg {
+    height: 2.7rem;
+    width: 2.7rem;
+    margin-right: 1rem;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-gold);
+}
+
+.large {
+  font-size: 2.2rem;
+  padding: 1.7rem 4rem;
+
+  & svg {
+    height: 3.2rem;
+    width: 3.2rem;
+    margin-right: 1.3rem;
+  }
+}
+
+.small {
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+
+  & svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.7rem;
+  }
+}

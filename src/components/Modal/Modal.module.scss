@@ -1,0 +1,61 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  outline: none;
+  border-radius: 1.5rem;
+  max-width: 70rem;
+  min-width: 50rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.header {
+  padding: 1rem 2rem;
+  display: flex;
+  border-bottom: 0.1rem solid var(--color-gray-3);
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-black);
+}
+
+.title {
+  line-height: 1;
+  font-weight: 400;
+  font-size: 2.3rem;
+}
+
+.close {
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-black);
+
+  & svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+.content {
+  padding: 2rem;
+  color: var(--color-black);
+}

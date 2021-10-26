@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 70rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.avatar {
+  height: 15rem;
+  width: 15rem;
+  object-fit: cover;
+  border-radius: 10rem;
+  margin-bottom: 2rem;
+  background-color: var(--color-gray-3);
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.name {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+}
+
+.bio {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+}
+
+.joined {
+  font-size: 1.7rem;
+}
