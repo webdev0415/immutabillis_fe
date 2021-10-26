@@ -5,13 +5,13 @@ import {
   ProjectsGrid,
   FeaturesGrid,
 } from 'components'
-import { Hero } from './page-components'
+import { LatestProjectHero } from './page-components'
 
 const Home = () => {
   return (
     <Layout>
-      <Hero />
-      <TextBlock title="this is a title" subtitle="this is a longer subtitle">
+      <LatestProjectHero />
+      <TextBlock title="immutabilis.art">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
         mollitia, quidem veniam dignissimos soluta voluptate autem blanditiis
         voluptas, magni unde repellat deleniti possimus iste, vero nihil a fuga
@@ -20,7 +20,7 @@ const Home = () => {
         Esse omnis amet, blanditiis doloribus similique laboriosam dolore! Sint
         eaque alias vero
       </TextBlock>
-      <TextImageBlock
+      {/* <TextImageBlock
         title="The Premier makrketplace for nfties"
         text="magni unde repellat deleniti possimus iste, vero nihil a fuga
         perferendis tempora! Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -43,7 +43,7 @@ const Home = () => {
         ]}
         actionLabel="Learn More"
         onAction={() => console.log('action clicked')}
-      />
+      /> */}
       <ProjectsGrid />
       <FeaturesGrid />
     </Layout>

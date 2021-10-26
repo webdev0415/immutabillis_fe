@@ -1,1 +1,1 @@
-export { Hero } from './Hero/Hero'
+export { LatestProjectHero } from './LatestProjectHero/LatestProjectHero'

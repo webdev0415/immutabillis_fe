@@ -2,8 +2,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from 'pages/Home'
 import User from 'pages/User'
-import Artist from 'pages/Artist'
-import Project from 'pages/Project'
+import Collection from 'pages/Collection'
+import Projects from 'pages/Projects'
+
+import About from 'pages/About'
+import Ones from 'pages/Ones'
+
+import Gallery from 'pages/Gallery'
 
 function App() {
   return (
@@ -11,8 +16,11 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/user" exact component={User} />
-        <Route path="/artist" exact component={Artist} />
-        <Route path="/project" exact component={Project} />
+        <Route path="/about" exact component={About} />
+        <Route path="/ones" exact component={Ones} />
+        <Route path="/gallery" exact component={Gallery} />
+        <Route path="/collection" exact component={Collection} />
+        <Route path="/projects" exact component={Projects} />
       </Switch>
     </BrowserRouter>
   )

@@ -10,7 +10,16 @@
 }
 
 .title {
-  font-size: 7rem;
+  font-size: 5rem;
+  margin: 0;
+  margin-bottom: 2rem;
+
+  & span {
+    color: var(--color-gold);
+  }
+}
+.subtitle {
+  font-size: 2rem;
   margin: 0;
   margin-bottom: 2rem;
 

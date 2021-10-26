@@ -1,8 +1,14 @@
 import { Project } from 'components'
 import classNames from 'classnames'
-import classes from './ProjectsGrid.module.scss'
+import classes from './GalleryGrid.module.scss'
 
-export const ProjectsGrid = ({ data, fullWidth, thumbnailOnly }) => {
+export const GalleryGrid = () => {
+
+  /**
+   * This is an array of randomly selected items from the WHOLE collection from the smart contract.
+   * 
+   * IMAGE ONLY displayed, with link to the INDIVIDUAL ITEM
+   */
   const projects = [
     {
       id: 1,
@@ -48,7 +54,6 @@ export const ProjectsGrid = ({ data, fullWidth, thumbnailOnly }) => {
 
   return (
     <section className={classNames(classes.container, 'container')}>
-      <h2 className={classes.title}>NFTs Project</h2>
       <div className={classes.grid}>
         {projects.map((project) => (
           <Project
