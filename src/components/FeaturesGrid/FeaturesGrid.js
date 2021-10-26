@@ -19,26 +19,10 @@ export const FeaturesGrid = () => {
       title: 'Add your NTFs',
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure eaque a sequi placeat atque ipsum illum quia aspernatur, corrupti totam commodi',
     },
-    {
-      img: BitcoinImage,
-      title: 'Add your NTFs',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure eaque a sequi placeat atque ipsum illum quia aspernatur, corrupti totam commodi',
-    },
-    {
-      img: BitcoinImage,
-      title: 'Add your NTFs',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure eaque a sequi placeat atque ipsum illum quia aspernatur, corrupti totam commodi',
-    },
-    {
-      img: BitcoinImage,
-      title: 'Add your NTFs',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure eaque a sequi placeat atque ipsum illum quia aspernatur, corrupti totam commodi',
-    },
   ]
 
   return (
     <section className={classNames(classes.container, 'container')}>
-      <h2 className={classes.title}>What We Offer</h2>
       <div className={classes.grid}>
         {features.map((feature) => (
           <div className={classes.feature} key={feature.title}>

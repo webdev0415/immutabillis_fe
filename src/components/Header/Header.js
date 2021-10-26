@@ -10,18 +10,24 @@ import { ReactComponent as MetamaskIcon } from 'assets/logos/metamask.svg'
 export const Header = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  const mmConnected = true;
+
   const navItems = [
     {
-      label: 'Home',
-      to: '/',
+      label: 'Gallery',
+      to: '/gallery',
     },
     {
-      label: 'Artist',
-      to: '/artist',
+      label: 'Projects',
+      to: '/projects',
     },
     {
-      label: 'Project',
-      to: '/project',
+      label: 'Ones',
+      to: '/ones',
+    },
+    {
+      label: 'About',
+      to: '/about',
     },
   ]
 
@@ -41,6 +47,16 @@ export const Header = ({ className }) => {
             </li>
           ))}
         </ul>
+
+        {mmConnected &&
+          <ul className={classes.list + classes.right}>
+              <li className={classes.item} >
+                <NavLink activeClassName={classes['item--active']} to='/collection'>
+                  Collection
+                </NavLink>
+              </li>
+          </ul>
+        }
 
         <Button size="large" onClick={() => setIsModalOpen(true)}>
           Connect

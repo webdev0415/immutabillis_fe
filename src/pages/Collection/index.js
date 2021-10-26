@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { Layout, ProjectsGrid, UserBanner, UserAvatar, Tabs } from 'components'
 import classes from './index.module.scss'
 
-const Artist = () => {
+const Collection = () => {
   return (
     <Layout>
       <section className={classNames('container', classes.hero)}>
@@ -21,4 +21,4 @@ const Artist = () => {
   )
 }
 
-export default Artist
+export default Collection
