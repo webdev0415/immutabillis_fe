@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import Web3 from "web3";
-import { handleAuthenticationAction, authenticateFailureAction } from "../redux/auth/action"
+import {
+  handleAuthenticationAction,
+  authenticateFailureAction,
+} from "../redux/auth/action";
 
-const welcomeMetaMask =
-  'Welcome to Metamask'
+const welcomeMetaMask = "Welcome to Metamask";
 const useMetaMaskAuth = (onMetaMaskNotInstalled) => {
-    const history = useHistory()
-    const dispatch = useDispatch()
+  const history = useHistory();
+  const dispatch = useDispatch();
   const [accounts, setAccounts] = useState(null);
 
   const initInstance = async (auth = false) => {
     if (window.ethereum) {
       if (auth) await window.ethereum.enable();
       window.ethereum.on("accountsChanged", setAccounts);
-      console.log("window.ethereum", window.ethereum);
       return new Web3(window.ethereum);
     } else if (window.web3) {
       return new Web3(window.currentProvider);
@@ -30,26 +31,23 @@ const useMetaMaskAuth = (onMetaMaskNotInstalled) => {
 
     const coinbase = await ethereum.eth.getCoinbase();
     const publicAddress = coinbase.toLowerCase();
-    console.log("publicAddress", publicAddress)
     ethereum.eth.personal
       .sign(welcomeMetaMask, publicAddress, "")
       .then((signature) => {
-          console.log("signature", signature)
         dispatch(
           handleAuthenticationAction({
             publicAddress,
             signature,
             history,
           })
-        )
+        );
       })
       .catch((err) => {
-          console.log("err", err)
-        dispatch(authenticateFailureAction(err))
-      })
+        console.log("err", err);
+        dispatch(authenticateFailureAction(err));
+      });
   };
 
-  
   return {
     handleAuth,
   };

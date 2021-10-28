@@ -2,9 +2,8 @@ import axios from "axios";
 import * as actionTypes from "./type";
 
 export const handleAuthenticationAction = (payload) => {
-    console.log("payload", payload)
-    const { publicAddress, signature, history } = payload;
-    
+  const { publicAddress, signature, history } = payload;
+
   return (dispatch) => {
     try {
       dispatch({
