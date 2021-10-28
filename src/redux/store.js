@@ -9,8 +9,8 @@ export const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(thunk, logger))
 )
-export const persistor = persistStore(store)
-export default { store, persistor }
+// export const persistor = persistStore(store)
+// export default { store, persistor }
 // @TODO: Persist is hampering development speed - this should only be on production
 // export const persistor = persistStore(store)
-// export default { store }
+export default { store }

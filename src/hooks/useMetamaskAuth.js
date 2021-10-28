@@ -30,10 +30,11 @@ const useMetaMaskAuth = (onMetaMaskNotInstalled) => {
 
     const coinbase = await ethereum.eth.getCoinbase();
     const publicAddress = coinbase.toLowerCase();
-
+    console.log("publicAddress", publicAddress)
     ethereum.eth.personal
       .sign(welcomeMetaMask, publicAddress, "")
       .then((signature) => {
+          console.log("signature", signature)
         dispatch(
           handleAuthenticationAction({
             publicAddress,
@@ -43,6 +44,7 @@ const useMetaMaskAuth = (onMetaMaskNotInstalled) => {
         )
       })
       .catch((err) => {
+          console.log("err", err)
         dispatch(authenticateFailureAction(err))
       })
   };
