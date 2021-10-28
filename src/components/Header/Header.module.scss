@@ -57,7 +57,17 @@
   flex-direction: column;
   align-items: center;
 }
-
+.metamask-install {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.metamask-install-desc {
+  margin-bottom: 1rem;
+}
+.metamask-install-anchor {
+  text-decoration: none;
+}
 .modal-action {
   background: none;
   border: none;

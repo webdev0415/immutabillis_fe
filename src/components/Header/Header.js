@@ -6,9 +6,13 @@ import classNames from 'classnames'
 
 import LogoImage from 'assets/logos/logo.png'
 import { ReactComponent as MetamaskIcon } from 'assets/logos/metamask.svg'
+import useMetaMaskAuth from "../../hooks/useMetamaskAuth"
 
 export const Header = ({ className }) => {
+  
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [metaMaskNotInstalled, setMetaMaskNotInstalled] = useState(false)
+
 
   const mmConnected = true;
 
@@ -30,7 +34,10 @@ export const Header = ({ className }) => {
       to: '/about',
     },
   ]
-
+  const onMetaMaskNotInstalled = () => {
+    setMetaMaskNotInstalled(true)
+  }
+  const { handleAuth } = useMetaMaskAuth(onMetaMaskNotInstalled)
   return (
     <header className={classNames(classes.header, className)}>
       <nav className={classes.nav}>
@@ -72,7 +79,14 @@ export const Header = ({ className }) => {
           <button className={classes['modal-action']}>
             <MetamaskIcon />
           </button>
-          <Button>Login with Metamask</Button>
+          {
+            metaMaskNotInstalled 
+            ? <div className={classes['metamask-install']}>
+              <h3 className={classes['metamask-install-desc']}>MetaMask is not installed on your browser.</h3>
+              <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" className={classes['metamask-install-anchor']}><Button>Install Metamask</Button></a>
+              </div>
+            : <Button onClick={handleAuth}>Login with Metamask</Button>
+          }
           <p className={classes['modal-info']}>
             Your are always in control when interacting on Immutabillis with
             METAMASK.
