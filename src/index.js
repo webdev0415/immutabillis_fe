@@ -1,14 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './redux/store';
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 import 'styles/main.scss'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+		{/*@TODO: Persist is hampering development speed - this should only be on production*/}
+		<PersistGate persistor={persistor}>
+			<App />
+		</PersistGate>
+	</Provider>,
   document.getElementById('root'),
 )
 
